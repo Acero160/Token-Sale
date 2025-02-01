@@ -24,6 +24,6 @@ contract TokenSale {
     function purchase() public payable {
         require (msg.value >=  tokenPrice, "Not enough money");
         uint256 tokensToTransfer = msg.value / tokenPrice;
-        token.transfer(msg.sender, tokensToTransfer * 10 * token.decimals());
+        token.transfer(msg.sender, tokensToTransfer * 10 ** token.decimals());
     } 
 }
